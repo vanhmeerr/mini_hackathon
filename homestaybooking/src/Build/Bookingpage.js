@@ -1,16 +1,17 @@
-import { Container, Navbar, Nav, Carousel, Col, Row, InputGroup, Form, Button, FormGroup } from 'react-bootstrap';
+import { Container, Navbar, Nav, Carousel, Col, Row, Form, Button, FormGroup, Card } from 'react-bootstrap';
 
 const Bookingpage = () => {
     return (
         <div>
-            <Container className="my-4">
+            <section id='Photo'>
+            <Container className="my-4" >
                 <Row className="justify-content-center">
                     <Col md={6}>
                         <Carousel>
                             <Carousel.Item>
                                 <img
                                     className="d-block w-100"
-                                    src="https://via.placeholder.com/800x400?text=First+Slide"
+                                    src="https://a0.muscache.com/im/pictures/089364fd-cf9b-45fa-a592-6c2299fc307e.jpg?im_w=1200"
                                     alt="First slide"
                                 />
                                 <Carousel.Caption>
@@ -21,7 +22,7 @@ const Bookingpage = () => {
                             <Carousel.Item>
                                 <img
                                     className="d-block w-100"
-                                    src="https://via.placeholder.com/800x400?text=Second+Slide"
+                                    src="https://a0.muscache.com/im/pictures/1a11877f-971c-4a65-8293-4cdc6e2bc718.jpg?im_w=720"
                                     alt="Second slide"
                                 />
                                 <Carousel.Caption>
@@ -32,7 +33,7 @@ const Bookingpage = () => {
                             <Carousel.Item>
                                 <img
                                     className="d-block w-100"
-                                    src="https://via.placeholder.com/800x400?text=Third+Slide"
+                                    src="https://a0.muscache.com/im/pictures/26401432-557b-4ac8-980d-0aff64414714.jpg?im_w=1200"
                                     alt="Third slide"
                                 />
                                 <Carousel.Caption>
@@ -47,7 +48,7 @@ const Bookingpage = () => {
                             <Carousel.Item>
                                 <img
                                     className="d-block w-100"
-                                    src="https://via.placeholder.com/800x400?text=First+Slide"
+                                    src="https://images.pexels.com/photos/13326362/pexels-photo-13326362.jpeg?auto=compress&cs=tinysrgb&w=600"
                                     alt="First slide"
                                 />
                                 <Carousel.Caption>
@@ -58,7 +59,7 @@ const Bookingpage = () => {
                             <Carousel.Item>
                                 <img
                                     className="d-block w-100"
-                                    src="https://via.placeholder.com/800x400?text=Second+Slide"
+                                    src="https://images.pexels.com/photos/13454560/pexels-photo-13454560.jpeg?auto=compress&cs=tinysrgb&w=600"
                                     alt="Second slide"
                                 />
                                 <Carousel.Caption>
@@ -69,7 +70,7 @@ const Bookingpage = () => {
                             <Carousel.Item>
                                 <img
                                     className="d-block w-100"
-                                    src="https://via.placeholder.com/800x400?text=Third+Slide"
+                                    src="https://images.pexels.com/photos/15595781/pexels-photo-15595781/free-photo-of-a-row-of-wooden-chairs-on-the-side-of-a-building.jpeg?auto=compress&cs=tinysrgb&w=600"
                                     alt="Third slide"
                                 />
                                 <Carousel.Caption>
@@ -81,16 +82,17 @@ const Bookingpage = () => {
                     </Col>
                 </Row>
             </Container>
+            </section>
             <Navbar bg="dark" variant="dark" sticky="top">
                 <Container>
-                    <Navbar.Brand href="#home">Homestay Booking</Navbar.Brand>
                     <Nav className='me-auto'>
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#features">Features</Nav.Link>
-                        <Nav.Link href="#pricing">Pricing</Nav.Link>
+                        <Nav.Link href="#Photo">Photo</Nav.Link>
+                        <Nav.Link href="#Features">Features</Nav.Link>
+                        <Nav.Link href="#Price">Pricing</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
+            <section id='Features'></section>
             <Container className="my-4">
                 <Row className="justify-content-center">
                     <Col md={6}>
@@ -107,11 +109,6 @@ const Bookingpage = () => {
                                         <Form.Control type="password" placeholder="Password" />
                                     </Form.Group>
                                 </Row>
-                                <Form.Group className="mb-3" controlId="formGridAddress2">
-                                    <Form.Label>Address 2</Form.Label>
-                                    <Form.Control placeholder="Apartment, studio, or floor" />
-                                </Form.Group>
-
                                 <Row className="mb-3">
                                     <Form.Group as={Col} controlId="formGridCity">
                                         <Form.Label>Phone Number</Form.Label>
@@ -137,16 +134,58 @@ const Bookingpage = () => {
                                 </Button>
                             </Form>
                         </FormGroup>
-
-
                     </Col>
                     <Col md={6}>
+                    <Card>
+                            <Card.Body>
+                                <Card.Title>About This Space</Card.Title>
+                                <Card.Text>
+                                    <strong>1 Bedroom Unit</strong><br/>
+                                    Bali Residence<br/><br/>
+                                    <ul>
+                                        <li>Cosy Room with bathroom</li>
+                                        <li>Adjustable cold/hot water</li>
+                                        <li>Queen bed x2</li>
+                                        <li>Pillow x4</li>
+                                        <li>Air-Conditioned</li>
+                                        <li>High-Speed Wifi</li>
+                                        <li>City view</li>
+                                        <li>Netflix/Youtube</li>
+                                        <li>Add On Package: Birthday/Proposal/Anniversary (RM200-RM9999)</li>
+                                    </ul>
+                                    <strong>*FREE PARKING!</strong><br/><br/>
+                                    <strong>Guest Access:</strong><br/>
+                                    All shared facilities are usable from 9am to 9pm.<br/><br/>
+                                    <strong>Level G:</strong><br/>
+                                    * Entrance<br/>
+                                    * Waiting Area/ Lobby (Taxi & Grab etc.)<br/><br/>
+                                    <strong>Level 7:</strong><br/>
+                                    * Pool<br/>
+                                    * Gym<br/>
+                                    * Pool for kids and adults w/slide!<br/>
+                                    * Playground<br/><br/>
+                                    <strong>24-hour security surveillance</strong><br/><br/>
+                                    <strong>Other Things to Note:</strong><br/>
+                                    Upon reservation confirmation, we need the following details to submit to the condominium management:
+                                    <ul>
+                                        <li>Full name:</li>
+                                        <li>IC/Passport Number:</li>
+                                        <li>Contact number:</li>
+                                        <li>Vehicle number (If any):</li>
+                                        <li>Check-in Time (3pm):</li>
+                                    </ul>
+                                    <strong id='Price' style={{background:'yellow'}}>Pricing:</strong><br/>
+                                    Now: RM72 night<br></br>
+                                    Rate: RM40 per hour<br/>
+                                    Time: Charges apply for each hour past the standard check-out time<br/>
+                                    Access card missing: RM200
+                                </Card.Text>
+                            </Card.Body>
+                        </Card>
 
                     </Col>
                 </Row>
             </Container>
-
-
         </div>
     )
 }
