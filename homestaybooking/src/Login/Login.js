@@ -6,12 +6,12 @@ function Login() {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
- 
-    const Home = () => {
-        navigate('/home');
-      };
+
     const handleLogin = async (event) => {
         event.preventDefault();
+        console.log('Form submitted'); 
+        console.log('Email:', email);
+        console.log('Password:', password);
 
         if (!email || !password) {
             alert('Please fill out all required fields.');
@@ -25,6 +25,7 @@ function Login() {
                 throw new Error('Failed to fetch users');
             }
             const users = await response.json();
+            console.log(users); // Log the response to see the structure
 
             // Find the user with the matching email
             const user = users.find((user) => user.email === email);
@@ -43,7 +44,7 @@ function Login() {
             // Successful login
             alert('Login successful!');
             localStorage.setItem('user', JSON.stringify(user)); // Save user data to local storage
-            navigate('/'); // Redirect to the homepage or another page
+            navigate('/home'); // Redirect to the home page
 
         } catch (error) {
             console.error('Error during login:', error);
@@ -113,7 +114,7 @@ function Login() {
                                             </div>
                                             <div className="col-12">
                                                 <div className="d-grid">
-                                                    <button className="btn bsb-btn-xl btn-primary" type="submit" onClick={Home}>Log in now</button>
+                                                    <button className="btn bsb-btn-xl btn-primary" type="submit">Log in now</button>
                                                 </div>
                                             </div>
                                         </div>

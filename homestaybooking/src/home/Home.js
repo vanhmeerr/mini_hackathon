@@ -6,7 +6,7 @@ import Navbar from "../navbar/Navbar";
 import "./home.css";
 import Carousel from "../carousel/carousel";
 import { useNavigate } from 'react-router-dom';
-
+import SearchBar from "../components/SearchBar/SearchBar";
 
 const Home = () => {
   const navigate = useNavigate(); // Call useNavigate inside the component
@@ -22,6 +22,7 @@ const Home = () => {
       <Carousel />
       <div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
       </div>
+      <SearchBar/>
       <div className="homeContainer">
         <MailList />
       </div>
