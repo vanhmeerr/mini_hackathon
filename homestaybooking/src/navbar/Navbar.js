@@ -1,13 +1,22 @@
 import "./navbar.css";
 import { Link } from "react-router-dom";
+import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
-const Navbar = () => {
+function Navbar() {
+  const navigate = useNavigate();
+  const handleLoginClick = () => {
+    navigate('/');
+  };
+  const handleRegister = () => {
+    navigate('/signup');
+  };
   return (
     <div className="navbar">
       <div className="navContainer">
-        <Link className="navbar-brand text-light" to="">
+        <Link className="navbar-brand text-light" to="/home">
           <img
-            src="SB.png"
+            src="Images/SB.png"
             alt="Logo"
             style={{ height: "30px", marginRight: "10px" }}
           />
@@ -15,8 +24,8 @@ const Navbar = () => {
         </Link>
         
         <div className="navItems">
-          <button className="navButton">Register</button>
-          <button className="navButton">Login</button>
+          <button className="navButton" onClick={handleRegister}>Register</button>
+          <button className="navButton" onClick={handleLoginClick}>Login</button>
         </div>
       </div>
     </div>

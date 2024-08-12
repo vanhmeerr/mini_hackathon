@@ -6,7 +6,10 @@ function Login() {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
+ 
+    const Home = () => {
+        navigate('/home');
+      };
     const handleLogin = async (event) => {
         event.preventDefault();
 
@@ -110,7 +113,7 @@ function Login() {
                                             </div>
                                             <div className="col-12">
                                                 <div className="d-grid">
-                                                    <button className="btn bsb-btn-xl btn-primary" type="submit">Log in now</button>
+                                                    <button className="btn bsb-btn-xl btn-primary" type="submit" onClick={Home}>Log in now</button>
                                                 </div>
                                             </div>
                                         </div>
