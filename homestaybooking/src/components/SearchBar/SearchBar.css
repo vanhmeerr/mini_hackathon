@@ -1,85 +1,106 @@
+/* Container that holds the entire search bar */
 .searchBarContainer {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .searchBarWrapper {
-    width: 100%;
-    max-width: 1024px;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .searchBarSearch {
-    flex: 1;
-    background-color: #febb02;
-    padding: 10px;
-    border-radius: 10px;
-    position: sticky;
-    top: 10px;
-    height: max-content;
-  }
-  
-  .sbTitle {
-    font-size: 20px;
-    color: #555;
-    margin-bottom: 10px;
-  }
-  
-  .sbItem {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin-bottom: 10px;
-  }
-  
-  .sbItem > label {
-    font-size: 12px;
-  }
-  
-  .sbItem > input {
-    height: 30px;
-    border: none;
-    padding: 5px;
-  }
-  
-  .sbItem > span {
-    height: 30px;
-    padding: 5px;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-  }
-  
-  .sbOptions {
-    padding: 10px;
-  }
-  
-  .sbOptionItem {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    color: #555;
-    font-size: 12px;
-  }
-  
-  .sbOptionInput {
-    width: 50px;
-  }
-  
-  .searchBarSearch > button {
-    padding: 10px;
-    background-color: #0071c2;
-    color: white;
-    border: none;
-    width: 100%;
-    font-weight: 500;
-    cursor: pointer;
-  }
-  
-  .searchBarResult {
-    flex: 3;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center items vertically if needed */
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Wrapper for search bar items */
+.searchBarWrapper {
+  width: 100%;  
+  max-width: 1200px; /* Adjust as needed to control the width */
+  display: flex;
+  flex-direction: column; /* Ensure items stack vertically */
+  align-items: center;
+}
+
+/* Style for the search bar */
+.searchBarSearch {
+  background-color: #d3d5e1;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative; /* Changed from sticky */
+  box-sizing: border-box;
+  width: 100%; /* Take full width of the wrapper */
+  max-width: 800px; /* Adjust to control the width */
+}
+
+/* Title style */
+.sbTitle {
+  font-size: 50px;
+  color: #028583;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Item styling within search bar */
+.sbItem {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+  width: 100%; /* Ensure items take full width */
+}
+
+/* Label styling */
+.sbItem > label {
+  font-size: 15px;
+}
+
+/* Input styling */
+.sbItem > input {
+  height: 30px;
+  border: none;
+  padding: 5px;
+}
+
+/* Span styling */
+.sbItem > span {
+  height: 30px;
+  padding: 5px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Option item styling */
+.sbOptionItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #555;
+  font-size: 12px;
+}
+
+/* Option input styling */
+.sbOptionInput {
+  width: 50px;
+}
+
+/* Button styling */
+.searchBarSearch > button {
+  padding: 10px;
+  background-color: #0071c2;
+  color: white;
+  border: none;
+  width: 100%;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Result styling */
+.searchBarResult {
+  flex: 1.5;
+}
+
+/* Centering body content */
+body {
+  margin: 0; /* Ensure no default margin is applied */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center items vertically if needed */
+  min-height: 100vh; /* Ensure full viewport height */
+}
