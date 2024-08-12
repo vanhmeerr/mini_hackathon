@@ -147,7 +147,7 @@ function Signup() {
                                         <div className="col-12">
                                             <hr className="mt-5 mb-4 border-secondary-subtle" />
                                             <div className="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-end">
-                                                <Link to="/login" className="link-secondary text-decoration-none">Already have an account?</Link>
+                                                <Link to="/" className="link-secondary text-decoration-none">Already have an account?</Link>
                                                 <Link to="/forgot-password" className="link-secondary text-decoration-none">Forgot password</Link>
                                             </div>
                                         </div>
