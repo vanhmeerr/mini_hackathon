@@ -23,7 +23,7 @@ const Header = ({ type }) => {
             <Link to="/home" className='active'>Home</Link>
           </div>
           <div className="headerListItem">
-            <Link to="/" className='active'>Listing</Link>
+            <Link to="/list" className='active'>Listing</Link>
           </div>
           <div className="headerListItem">
             <Link to="/booking" className='active'>Booking System</Link>

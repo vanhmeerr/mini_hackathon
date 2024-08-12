@@ -7,6 +7,7 @@ import "./home.css";
 import Carousel from "../carousel/carousel";
 import { useNavigate } from 'react-router-dom';
 
+
 const Home = () => {
   const navigate = useNavigate(); // Call useNavigate inside the component
 
@@ -20,7 +21,6 @@ const Home = () => {
       <Header />
       <Carousel />
       <div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}>
-        <button className="btn btn-primary" onClick={Search}>Go to Search</button>
       </div>
       <div className="homeContainer">
         <MailList />

@@ -17,7 +17,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/listing" element={<List />} />
+          <Route path="/list" element={<List />} />
           <Route path="/search" element={<Signup />} /> 
           {/* nanti tukar */}
           <Route path="/forgot-password" element={<ForgotPassword />} />
