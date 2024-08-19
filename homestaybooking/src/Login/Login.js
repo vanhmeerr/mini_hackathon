@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 function Login() {
     const navigate = useNavigate();
@@ -9,9 +8,6 @@ function Login() {
 
     const handleLogin = async (event) => {
         event.preventDefault();
-        console.log('Form submitted'); 
-        console.log('Email:', email);
-        console.log('Password:', password);
 
         if (!email || !password) {
             alert('Please fill out all required fields.');
@@ -19,33 +15,27 @@ function Login() {
         }
 
         try {
-            // Fetch users from the API
-            const response = await fetch('https://fakestoreapi.com/users');
+            const response = await fetch('http://localhost:5000/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, password }),
+            });
+
             if (!response.ok) {
-                throw new Error('Failed to fetch users');
-            }
-            const users = await response.json();
-            console.log(users); // Log the response to see the structure
-
-            // Find the user with the matching email
-            const user = users.find((user) => user.email === email);
-
-            if (!user) {
-                alert('No user found with this email.');
-                return;
+                throw new Error('Login failed');
             }
 
-            // Check if the password matches
-            if (user.password !== password) {
-                alert('Incorrect password.');
-                return;
+            const data = await response.json();
+
+            if (data.message === 'Login successful!') {
+                alert(data.message);
+                localStorage.setItem('user', JSON.stringify(data.user)); // Save user data to local storage
+                navigate('/home'); // Redirect to the home page
+            } else {
+                alert(data.message);
             }
-
-            // Successful login
-            alert('Login successful!');
-            localStorage.setItem('user', JSON.stringify(user)); // Save user data to local storage
-            navigate('/home'); // Redirect to the home page
-
         } catch (error) {
             console.error('Error during login:', error);
             alert('Login failed. Please try again later.');
@@ -81,27 +71,27 @@ function Login() {
                                         <div className="row gy-3 gy-md-4 overflow-hidden">
                                             <div className="col-12">
                                                 <label htmlFor="email" className="form-label">Email <span className="text-danger">*</span></label>
-                                                <input 
-                                                    type="email" 
-                                                    className="form-control" 
-                                                    name="email" 
-                                                    id="email" 
-                                                    placeholder="name@example.com" 
+                                                <input
+                                                    type="email"
+                                                    className="form-control"
+                                                    name="email"
+                                                    id="email"
+                                                    placeholder="name@example.com"
                                                     value={email}
                                                     onChange={(e) => setEmail(e.target.value)}
-                                                    required 
+                                                    required
                                                 />
                                             </div>
                                             <div className="col-12">
                                                 <label htmlFor="password" className="form-label">Password <span className="text-danger">*</span></label>
-                                                <input 
-                                                    type="password" 
-                                                    className="form-control" 
-                                                    name="password" 
-                                                    id="password"  
+                                                <input
+                                                    type="password"
+                                                    className="form-control"
+                                                    name="password"
+                                                    id="password"
                                                     value={password}
                                                     onChange={(e) => setPassword(e.target.value)}
-                                                    required 
+                                                    required
                                                 />
                                             </div>
                                             <div className="col-12">
